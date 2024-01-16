@@ -1,4 +1,4 @@
-<h1>Setting up a SIEM with Wazuh, TheHive and SOAR through Shuffle</h1>
+<h1>SIEM with Wazuh, TheHive and SOAR through Shuffle</h1>
 
 
 <h2>Description</h2>
