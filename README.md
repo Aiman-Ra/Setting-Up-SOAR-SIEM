@@ -1,8 +1,8 @@
-<h1>Setting up SIEM with Wazuh, TheHive and SOAR through Shuffle</h1>
+<h1>Setting up a SIEM with Wazuh, TheHive and SOAR through Shuffle</h1>
 
 
 <h2>Description</h2>
-This project consists of setting up a SIEM through cloud services and VMs. Wazuh and TheHive will assisgt us in case managment.
+This project consists of setting up a SIEM through cloud services and VMs. Wazuh and TheHive will assist us in case managment.
 <br />
 
 
