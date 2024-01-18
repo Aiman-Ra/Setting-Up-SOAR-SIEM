@@ -34,7 +34,7 @@ The main things we want to configure are the "listen_address", "rpc_address" and
 ```
 nano /etc/cassandra/cassandra.yaml
 ```
-<img src="https://i.imgur.com/0Xz6tuN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/0Xz6tuN.png" height="80%" width="80%"/>
 
 Afterwards we have to stop cassandra, remove the old files and start it again:
 ```
@@ -50,7 +50,7 @@ First, in the "elasticsearch.yml" file change the cluster name to whatever you l
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
-<img src="https://i.imgur.com/JXoOF9k.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/JXoOF9k.png" height="80%" width="80%"/>
 
 Now we have to start and enable ElasticSearch:
 ```
@@ -64,13 +64,13 @@ We start by changing the TheHive ownership to the destination directories:
 ```
 chown -R thehive:thehive /opt/thp
 ```
-Then in the "application.conf" file change all the "hostname" and "application.baseUrl" to your TheHive IP address:
+Next, in the "application.conf" file change all the "hostname" and "application.baseUrl" to your TheHive IP address:
 
 ```
 nano /etc/thehive/application.conf
 ```
 
-<img src="https://i.imgur.com/BJjQZWb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/BJjQZWb.png" height="80%" width="80%"/>
 
 Once again, we have to start and enable TheHive:
 ```
@@ -82,7 +82,7 @@ systemctl enable TheHive
 
 ### Configuring Wazuh
 
-In the Wazuh directory, there's a tar file containing the credintals we'll need to log in.  The main two are "admin user" and "API user"
+In the Wazuh directory, there's a tar file containing the credentials we'll need to log in.  The main two are "admin user" and "API user"
 
 ```
 tar -xvf wazuh-install-files.tar
@@ -92,7 +92,7 @@ cat wazuh-passwords.txt
 Now we need to add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the prompts. Be sure to set your Wazuh public IP address as the server IP address.
 <br/>
 > [!TIP]
-> It's easier to set-up Wazuh's _Active Response_ in Linux systems 
+> You'll need to run the terminal with admin privileges when adding the agent
 
 
 
