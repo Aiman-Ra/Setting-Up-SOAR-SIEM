@@ -89,10 +89,12 @@ tar -xvf wazuh-install-files.tar
 cd wazuh-install-files
 cat wazuh-passwords.txt 
 ```
-Now we need to add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the promopts. Be sure to set your Wazuh public IP address as the server IP address.
+Now we need to add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the prompts. Be sure to set your Wazuh public IP address as the server IP address.
 <br/>
 > [!TIP]
-> It's easier to set-up _Resonsive Actions_ in Linux systems 
+> It's easier to set-up Wazuh's _Active Response_ in Linux systems 
+
+
 
 <img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
