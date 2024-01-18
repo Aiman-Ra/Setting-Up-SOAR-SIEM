@@ -44,7 +44,7 @@ nano /etc/elasticsearch/elasticsearch.yml
 ```
 <img src="https://i.imgur.com/JXoOF9k.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-When you finish, start and enable ElasticSearch:
+Now we have to start and enable ElasticSearch:
 ```
 systemctl start elasticsearch
 systemctl enable elasticsearch
