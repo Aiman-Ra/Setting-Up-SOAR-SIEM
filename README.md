@@ -2,7 +2,7 @@
 
 
 <h2>Description</h2>
-This project consists of setting up a SIEM through cloud services and VMs. Wazuh and TheHive will assist us in case managment. Shuffle will be our SOAR platform.
+This project consists of setting up a SIEM through cloud services and VMs. Wazuh and TheHive will assist us in case managment, while Shuffle will be our SOAR platform.
 <br />
 
 
