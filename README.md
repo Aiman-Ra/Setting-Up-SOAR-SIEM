@@ -80,7 +80,7 @@ systemctl enable TheHive
 
 <h2> </h2> 
 
-### Adding the agent
+### Adding The Agent
 
 In the Wazuh directory, there's a tar file containing the credentials we'll need to log in.  The main two are "admin user" and "API user"
 
@@ -95,15 +95,23 @@ Now we need to add an agent to start collecting telemetry. In the Wazuh dashboar
 > You'll need to run the terminal with admin privileges when adding the agent
 
 
-### Configuring the agent
+#### Configuring The Agent
 
-To start adding rules for our telemtry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
+To ingest logs for our telemtry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
+<br/>
+Inside the file you'll find "<! -- Log Analysis -->", this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
+
+<img src="https://i.imgur.com/GPz81qk.png" height="80%" width="80%"/>
+<br/>
+
+> [!IMPORTANT]
+> It's best practice to create a backup file in case things go wrong!
+
+
+<h2> </h2> 
 
 
 
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
 Wait for process to complete (may take some time):  <br/>
 <img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
