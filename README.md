@@ -35,9 +35,9 @@ systemctl stop cassandra.service
 rm -rf /var/lib/cassandra/*
 systemctl start cassandra.service
 ```
+<h2> </h2>
 
-
-## Configuring ElasticSearch:
+### Configuring ElasticSearch:
 
 First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address in "network.host:". Finally, uncomment the "http.port:", "cluster.initial_master_nodes:" and remove node-2.
 ```
@@ -50,9 +50,9 @@ Now we have to start and enable ElasticSearch:
 systemctl start elasticsearch
 systemctl enable elasticsearch
 ```
+<h2> </h2>
 
-
-## Configuring TheHive:
+### Configuring TheHive:
 We start by changing the TheHive ownership to the destination directories:
 ```
 chown -R thehive:thehive /opt/thp
