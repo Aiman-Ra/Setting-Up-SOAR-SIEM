@@ -21,7 +21,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 
 ## Program walk-through:
 
-#### Configuring Cassandra:
+### Configuring Cassandra:
 
 The main things we want to configure are the "listen_address", "rpc_address" and the "seeds" in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
 ```
@@ -36,7 +36,7 @@ rm -rf /var/lib/cassandra/*
 systemctl start cassandra.service
 ```
 
-#### Configuring ElasticSearch:
+### Configuring ElasticSearch:
 
 First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address in "network.host:". Finally, uncomment the "http.port:", "cluster.initial_master_nodes:" and remove node-2.
 ```
