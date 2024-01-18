@@ -29,17 +29,19 @@ Nano /etc/cassandra/cassandra.yaml
 ```
 <img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Afterwards we have to stop cassandra and remove the old files and start it again:
+Afterwards we have to stop cassandra, remove the old files and start it again:
 ```
 systemctl stop cassandra.service
 rm -rf /var/lib/cassandra/*
 systemctl start cassandra.service
 ```
 
+#### Configuring ElasticSearch:
 
-<br />
-<br />
-Select the disk:  <br/>
+First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then uncomment the network.host and add your TheHive IP address instead.
+```
+nano /etc/elasticsearch/elasticsearch.yml
+```
 <img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
