@@ -64,8 +64,12 @@ We start by changing the TheHive ownership to the destination directories:
 ```
 chown -R thehive:thehive /opt/thp
 ```
+Then in the "application.conf" file change all the "hostname" and "application.baseUrl" to your TheHive IP address:
 
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+```
+nano /etc/thehive/application.conf
+```
+<img src="https://i.imgur.com/BJjQZWb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Confirm your selection:  <br/>
