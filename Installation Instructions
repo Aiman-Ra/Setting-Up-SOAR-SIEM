@@ -9,9 +9,6 @@ curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-in
 Extract Wazuh Credentials
 sudo tar -xvf wazuh-install-files.tar
 
-
-Installing TheHive 5
-
 Dependences
 apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb-release
 
@@ -35,12 +32,6 @@ sudo apt-get install apt-transport-https
 echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 sudo apt update
 sudo apt install elasticsearch
-
-***OPTIONAL ELASTICSEARCH***
-Create a jvm.options file under /etc/elasticsearch/jvm.options.d and put the following configurations in that file.
--Dlog4j2.formatMsgNoLookups=true
--Xms2g
--Xmx2g
 
 Installing TheHive
 wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
