@@ -25,7 +25,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 
 The main things we want to configure are the "listen_address", "rpc_address" and the "seed_provider" in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
 ```
-Nano /etc/cassandra/cassandra.yaml
+nano /etc/cassandra/cassandra.yaml
 ```
 <img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
