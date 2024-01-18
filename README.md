@@ -69,7 +69,15 @@ Then in the "application.conf" file change all the "hostname" and "application.b
 ```
 nano /etc/thehive/application.conf
 ```
+
 <img src="https://i.imgur.com/BJjQZWb.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Once again, we have to start and enable TheHive:
+```
+systemctl start TheHive
+systemctl enable TheHive
+```
+
 <br />
 <br />
 Confirm your selection:  <br/>
