@@ -9,7 +9,7 @@ curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-in
 Extract Wazuh Credentials
 sudo tar -xvf wazuh-install-files.tar
 
-Dependences
+Dependencies
 apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb-release
 
 Installing Java
