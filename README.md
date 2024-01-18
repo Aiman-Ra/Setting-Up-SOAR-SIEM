@@ -19,7 +19,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 - <b>Windows 10</b> (21H2)
 - <b>Ubuntu 22.04 LTS</b>
 
-## Program walk-through:
+## Program walk-through
 
 ### Configuring Cassandra:
 
