@@ -78,9 +78,22 @@ systemctl start TheHive
 systemctl enable TheHive
 ```
 
-<br />
-<br />
-Confirm your selection:  <br/>
+<h2> </h2> 
+
+### Configuring Wazuh
+
+In the Wazuh directory, there's a tar file containing the credintals we'll need to log in.  The main two are "admin user" and "API user"
+
+```
+tar -xvf wazuh-install-files.tar
+cd wazuh-install-files
+cat wazuh-passwords.txt 
+```
+Now we need to add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the promopts. Be sure to set your Wazuh public IP address as the server IP address.
+<br/>
+> [!TIP]
+> It's easier to set-up _Resonsive Actions_ in Linux systems 
+
 <img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
