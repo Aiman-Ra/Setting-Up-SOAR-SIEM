@@ -80,7 +80,7 @@ systemctl enable TheHive
 
 <h2> </h2> 
 
-### Configuring Wazuh
+### Adding the agent
 
 In the Wazuh directory, there's a tar file containing the credentials we'll need to log in.  The main two are "admin user" and "API user"
 
@@ -93,6 +93,11 @@ Now we need to add an agent to start collecting telemetry. In the Wazuh dashboar
 <br/>
 > [!TIP]
 > You'll need to run the terminal with admin privileges when adding the agent
+
+
+### Configuring the agent
+
+To start adding rules for our telemtry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
 
 
 
