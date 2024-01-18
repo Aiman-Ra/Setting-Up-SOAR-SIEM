@@ -38,11 +38,11 @@ systemctl start cassandra.service
 
 #### Configuring ElasticSearch:
 
-First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then uncomment the network.host and add your TheHive IP address instead.
+First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then uncomment the "http.port:", "cluster.initial_master_nodes:" and remove node-2. Lastly, add your TheHive IP address in "network.host:".
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/JXoOF9k.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Enter the number of passes: <br/>
