@@ -17,7 +17,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 
 - <b>Azure/Digital Ocean</b>
 - <b>Windows 10</b> (21H2)
-- <b>Ubuntu 22.04 LTS</b> (21H2)
+- <b>Ubuntu 22.04 LTS</b>
 
 ## Program walk-through:
 
@@ -29,10 +29,11 @@ Nano /etc/cassandra/cassandra.yaml
 ```
 <img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
-Afterwards we have to stop cassandra and remove the old files:
+Afterwards we have to stop cassandra and remove the old files and start it again:
 ```
 systemctl stop cassandra.service
 rm -rf /var/lib/cassandra/*
+systemctl start cassandra.service
 ```
 
 
