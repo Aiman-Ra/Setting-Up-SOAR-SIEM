@@ -203,8 +203,14 @@ For the service account create an API Key and copy it. Next, log-in using the no
 5. Set Flag to "false", Pap to 2, Severity to 2, Source to "Wazuh" and Status to "New".
 6. In the Tags field you can add in the Mitre Attack Tag in brackets. In this case ["T10003"] stands for credentials dumping, which is what Mimikatz is known for.
 
-<img src="https://i.imgur.com/6O2EQvp.png" height="80%" width="80%"/>
+<img src="https://i.imgur.com/hoGujCk.png" height="80%" width="80%"/>
+<img src="https://i.imgur.com/DLH0OzE.png" height="80%" width="80%"/>
 <br/>
+
+<h2> </h2> 
+## Video Tutorial
+Major shoutout to [MyDFIR](https://www.youtube.com/@MyDFIR) for sharing his knowledge with us. If you prefer to learn through videos you can [find his tutorial here](https://www.youtube.com/watch?v=XR3eamn8ydQ)
+
 
 </p>
 <!--
@@ -216,4 +222,3 @@ For the service account create an API Key and copy it. Next, log-in using the no
 @@ text in purple (and bold)@@
 ```
 --!>
-1
