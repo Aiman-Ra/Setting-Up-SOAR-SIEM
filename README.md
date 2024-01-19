@@ -134,8 +134,30 @@ In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules fil
 Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it and copy any of the rules so you can use it as a template for your first custom rule.
 
 <img src="https://i.imgur.com/Sw536g2.png" height="80%" width="80%"/>
-</p>
 
+
+Click on "custom rules" and you should find "local_rules.xml", click on "edit" and paste in the rule we just copied(Make sure to follow the same indentation).
+<br>
+Custom rules id start from 100000 and the severity levels range from 1 to 15(most severe).
+
+<img src="https://i.imgur.com/aKq3gXV.png" height="80%" width="80%"/>
+<br/>
+
+> [!TIP]
+> Rules are case sensitive!
+
+<h2> </h2> 
+
+### Configuring Shuffle
+
+Finally, to tie everything up we'll use [Shuffle](https://shuffler.io) as our SOAR platform. Create an account then navigate to "Workflows" and add a new workflow.
+<br>
+Click on "Change_me" and add "$exec" in the "call" section. Next click on "Triggers" in the bottom left and grab and drop the "Webhook" onto the canvas and name it "Wazuh-Alerts" then copy the "Webhook URI"
+
+<img src="https://i.imgur.com/deiFimj.png" height="80%" width="80%"/>
+<br/>
+
+</p>
 <!--
  ```diff
 - text in red
