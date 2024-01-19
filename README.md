@@ -166,17 +166,22 @@ sudo nano /var/ossec/etc/ossec.conf
 systemctl restart wazuh-manager.service
 ```
 
-#### Incoporating VirusTotal
+#### Parsing Data
 
-Shuffle allows us to use VirusTotal for enrichment. Let's set it up to look up the hash on our Mimikatz file:
-<br>
+Since we're collecting lots of information we want to parse the exact data we want to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
 1. Click on "Change_me" and set the "Find Actions" to "Regex capture group". 
 2. In the "input data" click the + icon and choose "hashes".
-3. In the "Regex Field" add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
+3. In the "Regex" field add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
 
 <img src="https://i.imgur.com/98k96YO.png" height="80%" width="80%"/>
 <br/>
 
+#### Incorporating VirusTotal
+
+Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-up to VirusTotal and copy the API key for our account. Now let's set it up to look up the hash on our Mimikatz file:
+1. In Shuffle search Virustotal in the "Active Apps", then drag and drop it on the canvas.
+2. Click on the VirusTotal icon and in "Find Actions" choose "Get a hash report".
+3. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
 
 
 
