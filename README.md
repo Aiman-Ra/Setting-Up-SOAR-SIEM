@@ -23,10 +23,12 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 <h2>Environments Used</h2>
 
 - <b>Azure/Digital Ocean</b>
-- <b>Windows 10</b> (21H2)
+- <b>Windows 10 (21H2)</b>
 - <b>Ubuntu 22.04 LTS</b>
 
-## Program walk-through
+## Program Walk-through
+
+<img src="https://i.imgur.com/8cPQ04v.png" height="80%" width="80%"/>
 
 ### Configuring Cassandra:
 
@@ -37,7 +39,7 @@ nano /etc/cassandra/cassandra.yaml
 <p align="center">
 <img src="https://i.imgur.com/0Xz6tuN.png" height="80%" width="80%"/>
 
-Afterwards we have to stop cassandra, remove the old files and start it again:
+Afterwards we have to stop Cassandra, remove the old files and start it again:
 ```
 systemctl stop cassandra.service
 rm -rf /var/lib/cassandra/*
@@ -62,6 +64,7 @@ systemctl enable elasticsearch
 <h2> </h2>
 
 ### Configuring TheHive:
+
 We start by changing the TheHive ownership to the destination directories:
 ```
 chown -R thehive:thehive /opt/thp
