@@ -34,6 +34,7 @@ The main things we want to configure are the "listen_address", "rpc_address" and
 ```
 nano /etc/cassandra/cassandra.yaml
 ```
+<p align="center">
 <img src="https://i.imgur.com/0Xz6tuN.png" height="80%" width="80%"/>
 
 Afterwards we have to stop cassandra, remove the old files and start it again:
@@ -50,6 +51,7 @@ First, in the "elasticsearch.yml" file change the cluster name to whatever you l
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
+<p align="center">
 <img src="https://i.imgur.com/JXoOF9k.png" height="80%" width="80%"/>
 
 Now we have to start and enable ElasticSearch:
@@ -70,6 +72,7 @@ Next, in the "application.conf" file change all the "hostname" and "application.
 nano /etc/thehive/application.conf
 ```
 
+<p align="center">
 <img src="https://i.imgur.com/BJjQZWb.png" height="80%" width="80%"/>
 
 Once again, we have to start and enable TheHive:
@@ -101,6 +104,7 @@ To ingest logs for our telemtry collection, we need to edit the "ossec.conf" fil
 <br/>
 Inside the file you'll find "<! -- Log Analysis -->", this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
 
+<p align="center">
 <img src="https://i.imgur.com/GPz81qk.png" height="80%" width="80%"/>
 <br/>
 
@@ -117,10 +121,12 @@ Now we need to enable Wazuh to ingest these logs. To do so we need to edit the f
 sudo nano /etc/filebeat/filebeat.yml
 ```
 
+<p align="center">
 <img src="https://i.imgur.com/8JODF9s.png" height="80%" width="80%"/>
 
 Head back to the Wazuh dahsboard, and click on the top left menu button > Stack management > Index pattern > Create index, and name it "wazuh-archives-**" so we can search everything. In the "Time field" choose "timestamp" and finally, Create index pattern.
 
+<p align="center">
 <img src="https://i.imgur.com/kmtg95u.png" height="80%" width="80%"/>
 
 <h2> </h2> 
@@ -133,6 +139,7 @@ In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules fil
 <br> 
 Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it and copy any of the rules so you can use it as a template for your first custom rule.
 
+<p align="center">
 <img src="https://i.imgur.com/Sw536g2.png" height="80%" width="80%"/>
 
 
@@ -140,6 +147,7 @@ Click on "custom rules" and you should find "local_rules.xml", click on "edit" a
 <br>
 Custom rules id start from 100000 and the severity levels range from 1 to 15(most severe).
 
+<p align="center">
 <img src="https://i.imgur.com/aKq3gXV.png" height="80%" width="80%"/>
 <br/>
 
@@ -154,6 +162,7 @@ Finally, to tie everything up we'll use [Shuffle](https://shuffler.io) as our SO
 <br>
 Next, click on "Triggers" in the bottom left and grab and drop the "Webhook" onto the canvas and name it "Wazuh-Alerts" then copy the "Webhook URI"
 
+<p align="center">
 <img src="https://i.imgur.com/jEi0zXO.png" height="80%" width="80%"/>
 <br/>
 
@@ -161,6 +170,8 @@ Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in 
 ```
 sudo nano /var/ossec/etc/ossec.conf
 ```
+
+<p align="center">
 <img src="https://i.imgur.com/vo8N8I3.png" height="80%" width="80%"/>
 
 As always, whenever we change the config file we must restart the service.
@@ -175,6 +186,7 @@ Since we're collecting lots of information we want to parse the exact data we wa
 2. In the "input data" click the + icon and choose "hashes".
 3. In the "Regex" field add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
 
+<p align="center">
 <img src="https://i.imgur.com/98k96YO.png" height="80%" width="80%"/>
 <br/>
 
@@ -187,6 +199,7 @@ Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-
 4. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
 5. Save and run it
 
+<p align="center">
 <img src="https://i.imgur.com/bapWcRC.png" height="80%" width="80%"/>
 <br/>
 
@@ -203,6 +216,7 @@ For the service account create an API Key and copy it. Next, log-in using the no
 5. Set Flag to "false", Pap to 2, Severity to 2, Source to "Wazuh" and Status to "New".
 6. In the Tags field you can add in the Mitre Attack Tag in brackets. In this case ["T10003"] stands for credentials dumping, which is what Mimikatz is known for.
 
+<p align="center">
 <img src="https://i.imgur.com/hoGujCk.png" align="center" height="80%" width="80%"/>
 <img src="https://i.imgur.com/DLH0OzE.png" height="80%" width="80%"/>
 <br/>
