@@ -119,14 +119,17 @@ sudo nano /etc/filebeat/filebeat.yml
 
 <img src="https://i.imgur.com/8JODF9s.png" height="80%" width="80%"/>
 
+Head back to the Wazuh dahsboard, and click on the top left menu button > Stack management > Index pattern > Create index, and name it "wazuh-archives-**" so we can search everything. In the "Time field" choose "timestamp" and finally, Create index pattern.
 
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
+<img src="https://i.imgur.com/kmtg95u.png" height="80%" width="80%"/>
+
+<h2> </h2> 
+
+### Creating Rules
+
+It's time to create our first rule! In this example we want to detect Mimikatz usage in our network. In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules file. Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it. Copy any of the rules so you can use it as a template for your first custom rule.
+
+
 <img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%"/>
 </p>
 
