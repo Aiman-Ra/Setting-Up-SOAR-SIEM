@@ -80,8 +80,8 @@ nano /etc/thehive/application.conf
 
 Once again, we have to start and enable TheHive:
 ```
-systemctl start Thehive
-systemctl enable Thehive
+systemctl start thehive
+systemctl enable thehive
 ```
 
 <h2> </h2> 
