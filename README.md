@@ -32,7 +32,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 
 ### Configuring Cassandra:
 
-The main things we want to configure are the "listen_address", "rpc_address" and "seeds" in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
+The main things we want to configure are the `listen_address`, `rpc_address` and `seeds` in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
 ```
 nano /etc/cassandra/cassandra.yaml
 ```
@@ -49,7 +49,7 @@ systemctl start cassandra.service
 
 ### Configuring ElasticSearch:
 
-First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address to "network.host". Finally, uncomment "http.port", "cluster.initial_master_nodes" and remove node-2.
+First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address to `network.host`. Finally, uncomment `http.port`, `cluster.initial_master_nodes` and remove node-2.
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
@@ -69,7 +69,7 @@ We start by changing the TheHive ownership to the destination directories:
 ```
 chown -R thehive:thehive /opt/thp
 ```
-Next, in the "application.conf" file change all the "hostname" and "application.baseUrl" to your TheHive IP address:
+Next, in the "application.conf" file change all the `hostname` and `application.baseUrl` to your TheHive IP address:
 
 ```
 nano /etc/thehive/application.conf
@@ -105,7 +105,7 @@ Now we can add an agent to start collecting telemetry. In the Wazuh dashboard cl
 
 To ingest logs for our telemetry collection, we need to edit the "ossec.conf" file. You'll either find it in `C:\Program Files (x86)\ossec-agent` for Windows OS or in `/var/ossec/etc/` for Linux OS.
 <br/>
-Inside the file you'll find "<! -- Log Analysis -->", this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
+Inside the file you'll find `<! -- Log Analysis -->`, this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
 
 <p align="center">
 <img src="https://i.imgur.com/GPz81qk.png" height="80%" width="80%"/>
@@ -228,7 +228,7 @@ For the service account create an API Key and copy it. Next, log-in using the no
 <h2> </h2> 
 
 ## Video Tutorial
-Major shoutout to [MyDFIR](https://www.youtube.com/@MyDFIR) for sharing his knowledge with us. If you prefer to learn through videos you can [find his tutorial here](https://www.youtube.com/watch?v=XR3eamn8ydQ)
+Major shout-out to [MyDFIR](https://www.youtube.com/@MyDFIR) for sharing his knowledge with us. If you prefer to learn through videos you can [find his tutorial here](https://www.youtube.com/watch?v=XR3eamn8ydQ)
 
 
 </p>
