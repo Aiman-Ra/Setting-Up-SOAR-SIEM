@@ -152,10 +152,33 @@ Custom rules id start from 100000 and the severity levels range from 1 to 15(mos
 
 Finally, to tie everything up we'll use [Shuffle](https://shuffler.io) as our SOAR platform. Create an account then navigate to "Workflows" and add a new workflow.
 <br>
-Click on "Change_me" and add "$exec" in the "call" section. Next click on "Triggers" in the bottom left and grab and drop the "Webhook" onto the canvas and name it "Wazuh-Alerts" then copy the "Webhook URI"
+Next, click on "Triggers" in the bottom left and grab and drop the "Webhook" onto the canvas and name it "Wazuh-Alerts" then copy the "Webhook URI"
 
-<img src="https://i.imgur.com/deiFimj.png" height="80%" width="80%"/>
+<img src="https://i.imgur.com/jEi0zXO.png" height="80%" width="80%"/>
 <br/>
+
+Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in the "Webhook URI" between the < global> and < alert> tags(Make sure to follow the same indentation) and restart wazuh when you're done. 
+```
+sudo nano /var/ossec/etc/ossec.conf
+```
+<img src="https://i.imgur.com/vo8N8I3.png" height="80%" width="80%"/>
+```
+systemctl restart wazuh-manager.service
+```
+
+#### Incoporating VirusTotal
+
+Shuffle allows us to use VirusTotal for enrichment. Let's set it up to look up the hash on our Mimikatz file:
+<br>
+1. Click on "Change_me" and set the "Find Actions" to "Regex capture group". 
+2. In the "input data" click the + icon and choose "hashes".
+3. In the "Regex Field" add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
+
+<img src="https://i.imgur.com/98k96YO.png" height="80%" width="80%"/>
+<br/>
+
+
+
 
 </p>
 <!--
