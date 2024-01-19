@@ -95,7 +95,7 @@ tar -xvf wazuh-install-files.tar
 cd wazuh-install-files
 cat wazuh-passwords.txt 
 ```
-Now we need to add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the prompts. Be sure to set your Wazuh public IP address as the server IP address.
+Now we can add an agent to start collecting telemetry. In the Wazuh dashboard click on "Add agent" and follow the prompts. Be sure to set your Wazuh public IP address as the server IP address.
 <br/>
 > [!TIP]
 > You'll need to run the terminal with admin privileges when adding the agent
@@ -103,7 +103,7 @@ Now we need to add an agent to start collecting telemetry. In the Wazuh dashboar
 
 #### Configuring The Agent
 
-To ingest logs for our telemetry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
+To ingest logs for our telemetry collection, we need to edit the "ossec.conf" file. You'll either find it in `C:\Program Files (x86)\ossec-agent` for Windows OS or in `/var/ossec/etc/` for Linux OS.
 <br/>
 Inside the file you'll find "<! -- Log Analysis -->", this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
 
@@ -119,7 +119,7 @@ Inside the file you'll find "<! -- Log Analysis -->", this is where you can add 
 
 ### Configuring Wazuh
 
-Now we need to enable Wazuh to ingest these logs. To do so, we need to edit the filebeat.yml in the Wazuh Manager's CLI and enable archiving.
+Next, we'll have to enable Wazuh to ingest these logs. To do so, we need to edit the filebeat.yml in the Wazuh Manager's CLI and enable archiving.
 ```
 sudo nano /etc/filebeat/filebeat.yml
 ```
