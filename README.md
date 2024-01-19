@@ -110,18 +110,24 @@ Inside the file you'll find "<! -- Log Analysis -->", this is where you can add 
 
 <h2> </h2> 
 
+### Configuring Wazuh
+
+Now we need to enable Wazuh to ingest these logs. To do so we need to edit the filebeat.yml in the Wazuh Manager's CLI and enable archiving.
+```
+sudo nano /etc/filebeat/filebeat.yml
+```
+
+<img src="https://i.imgur.com/8JODF9s.png" height="80%" width="80%"/>
 
 
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%"/>
 <br />
 <br />
 Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%"/>
 </p>
 
 <!--
