@@ -30,7 +30,7 @@ This project consists of setting up a SIEM through cloud services and VMs. Wazuh
 
 ### Configuring Cassandra:
 
-The main things we want to configure are the "listen_address", "rpc_address" and the "seeds" in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
+The main things we want to configure are the "listen_address", "rpc_address" and "seeds" in the "cassandra.yaml" file. Change the Localhost in all of them to your TheHive public IP address.
 ```
 nano /etc/cassandra/cassandra.yaml
 ```
@@ -47,7 +47,7 @@ systemctl start cassandra.service
 
 ### Configuring ElasticSearch:
 
-First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address in "network.host". Finally, uncomment the "http.port", "cluster.initial_master_nodes" and remove node-2.
+First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address to "network.host". Finally, uncomment "http.port", "cluster.initial_master_nodes" and remove node-2.
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
@@ -85,7 +85,7 @@ systemctl enable Thehive
 
 ### Adding The Agent
 
-In the Wazuh directory, there's a tar file containing the credentials we'll need to log in.  The main two are "admin user" and "API user"
+In the Wazuh directory, there's a tar file containing the credentials we'll need to log in. The main two are "admin user" and "API user"
 
 ```
 tar -xvf wazuh-install-files.tar
@@ -100,7 +100,7 @@ Now we need to add an agent to start collecting telemetry. In the Wazuh dashboar
 
 #### Configuring The Agent
 
-To ingest logs for our telemtry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
+To ingest logs for our telemetry collection, we need to edit the "ossec.conf" file. You'll either find it in "C:\Program Files (x86)\ossec-agent" for Windows OS or in "/var/ossec/etc/" for Linux OS.
 <br/>
 Inside the file you'll find "<! -- Log Analysis -->", this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
 
@@ -116,7 +116,7 @@ Inside the file you'll find "<! -- Log Analysis -->", this is where you can add 
 
 ### Configuring Wazuh
 
-Now we need to enable Wazuh to ingest these logs. To do so we need to edit the filebeat.yml in the Wazuh Manager's CLI and enable archiving.
+Now we need to enable Wazuh to ingest these logs. To do so, we need to edit the filebeat.yml in the Wazuh Manager's CLI and enable archiving.
 ```
 sudo nano /etc/filebeat/filebeat.yml
 ```
@@ -137,21 +137,21 @@ It's time to create our first rule! In this example we want to detect Mimikatz u
 <br>
 In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules file. 
 <br> 
-Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it and copy any of the rules so you can use it as a template for your first custom rule.
+Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it then copy any of the rules so you can use it as a template for your first custom rule.
 
 <p align="center">
 <img src="https://i.imgur.com/Sw536g2.png" height="80%" width="80%"/>
 
 
-Click on "custom rules" and you should find "local_rules.xml", click on "edit" and paste in the rule we just copied(Make sure to follow the same indentation).
+Click on "custom rules" and you should find "local_rules.xml", click on "edit" and paste in the rule we just copied (Make sure to follow the same indentation).
 <br>
-Custom rules id start from 100000 and the severity levels range from 1 to 15(most severe).
+Custom rules id start from 100000 and the severity levels range from 1 to 15 (most severe).
 
 <p align="center">
 <img src="https://i.imgur.com/aKq3gXV.png" height="80%" width="80%"/>
 <br/>
 
-> [!TIP]
+> [!NOTE]
 > Rules are case sensitive!
 
 <h2> </h2> 
@@ -181,10 +181,10 @@ systemctl restart wazuh-manager.service
 
 #### Parsing Data
 
-Since we're collecting lots of information we want to parse the exact data we want to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
+Since we're collecting lots of information, we want to parse the exact data to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
 1. Click on "Change_me" to rename it and set the "Find Actions" to "Regex capture group". 
-2. In the "input data" click the + icon and choose "hashes".
-3. In the "Regex" field add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
+2. In "input data" click the + icon and choose "hashes".
+3. In the "Regex" field enter "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
 
 <p align="center">
 <img src="https://i.imgur.com/98k96YO.png" height="80%" width="80%"/>
@@ -192,9 +192,9 @@ Since we're collecting lots of information we want to parse the exact data we wa
 
 #### Incorporating VirusTotal
 
-Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-up to VirusTotal and copy the API key for our account. Now let's set it up to look up the hash on our Mimikatz file:
-1. In Shuffle search "Virustotal" in the "Active Apps", then drag and drop it on the canvas.
-2. Click on the VirusTotal icon then Authenticate and add in your API key.
+Shuffle allows us to use VirusTotal for enrichment. To do so, we'll have to sign up for VirusTotal and copy the API key for our account. Now let's set it up to look up the hash on our Mimikatz file:
+1. In Shuffle search "Virustotal" in "Active Apps", then drag and drop it on the canvas.
+2. Click on the VirusTotal icon then "Authenticate" and enter your API key.
 3. In "Find Actions" choose "Get a hash report".
 4. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
 5. Save and run it
@@ -206,15 +206,15 @@ Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-
 <h2> </h2> 
 
 ### Creating Alerts
-Log-in TheHive with the default credentials(provided in the Installation Instruction file), then create a new orginasation and create 2 accounts within it, a service account and a normal account. 
+Log-in to TheHive with the default credentials (provided in the Installation Instruction file), then create a new organization and create 2 accounts within it: a service account and a normal account. 
 <br>
 For the service account create an API Key and copy it. Next, log-in using the normal account you just created, and head back to Shuffle set up Thehive:
-1. Search "TheHive" in the "Active Apps", then drag and drop it on the canvas.
+1. Search "TheHive" in "Active Apps", then drag and drop it on the canvas.
 2. Click on the TheHive icon then Authenticate and add in your API key, for the url add in your TheHive public IP address along with the port number.
 3. In "Find Actions" choose "Create Alert", then scroll down until you find the "Date" field and choose Execution Argument > utcTime
-4. Add in the describtion you want to assist the Analyst with investigating the alert.
+4. Add in the description you want to assist the Analyst with investigating the alert.
 5. Set Flag to "false", Pap to 2, Severity to 2, Source to "Wazuh" and Status to "New".
-6. In the Tags field you can add in the Mitre Attack Tag in brackets. In this case ["T10003"] stands for credentials dumping, which is what Mimikatz is known for.
+6. In the Tags field, you can add in the Mitre Attack Tag brackets. In this case ["T10003"] stands for credentials dumping, which is what Mimikatz is known for.
 
 <p align="center">
 <img src="https://i.imgur.com/hoGujCk.png" align="center" height="80%" width="80%"/>
