@@ -105,7 +105,7 @@ Now we can add an agent to start collecting telemetry. In the Wazuh dashboard cl
 
 To ingest logs for our telemetry collection, we need to edit the "ossec.conf" file. You'll either find it in `C:\Program Files (x86)\ossec-agent` for Windows OS or in `/var/ossec/etc/` for Linux OS.
 <br/>
-Inside the file you'll find `<! -- Log Analysis -->`, this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
+Inside the file you'll find `<!-- Log Analysis -->`, this is where you can add the location of the logs you want to collect. Make sure to restart Wazuh after editing the conf file.
 
 <p align="center">
 <img src="https://i.imgur.com/GPz81qk.png" height="80%" width="80%"/>
