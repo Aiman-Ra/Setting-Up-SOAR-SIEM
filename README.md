@@ -47,7 +47,7 @@ systemctl start cassandra.service
 
 ### Configuring ElasticSearch:
 
-First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address in "network.host:". Finally, uncomment the "http.port:", "cluster.initial_master_nodes:" and remove node-2.
+First, in the "elasticsearch.yml" file change the cluster name to whatever you like. Then add your TheHive IP address in "network.host". Finally, uncomment the "http.port", "cluster.initial_master_nodes" and remove node-2.
 ```
 nano /etc/elasticsearch/elasticsearch.yml
 ```
@@ -77,8 +77,8 @@ nano /etc/thehive/application.conf
 
 Once again, we have to start and enable TheHive:
 ```
-systemctl start TheHive
-systemctl enable TheHive
+systemctl start Thehive
+systemctl enable Thehive
 ```
 
 <h2> </h2> 
@@ -96,7 +96,7 @@ Now we need to add an agent to start collecting telemetry. In the Wazuh dashboar
 <br/>
 > [!TIP]
 > You'll need to run the terminal with admin privileges when adding the agent
-
+<br>
 
 #### Configuring The Agent
 
