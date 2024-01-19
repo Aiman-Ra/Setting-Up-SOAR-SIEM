@@ -157,11 +157,13 @@ Next, click on "Triggers" in the bottom left and grab and drop the "Webhook" ont
 <img src="https://i.imgur.com/jEi0zXO.png" height="80%" width="80%"/>
 <br/>
 
-Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in the "Webhook URI" between the < global> and < alert> tags(Make sure to follow the same indentation) and restart wazuh when you're done. 
+Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in the "Webhook URI" between the < global> and < alert> tags(Make sure to follow the same indentation). 
 ```
 sudo nano /var/ossec/etc/ossec.conf
 ```
 <img src="https://i.imgur.com/vo8N8I3.png" height="80%" width="80%"/>
+
+As always, whenever we change the config file we must restart the service.
 ```
 systemctl restart wazuh-manager.service
 ```
@@ -169,7 +171,7 @@ systemctl restart wazuh-manager.service
 #### Parsing Data
 
 Since we're collecting lots of information we want to parse the exact data we want to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
-1. Click on "Change_me" and set the "Find Actions" to "Regex capture group". 
+1. Click on "Change_me" to rename it and set the "Find Actions" to "Regex capture group". 
 2. In the "input data" click the + icon and choose "hashes".
 3. In the "Regex" field add in "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
 
@@ -179,13 +181,30 @@ Since we're collecting lots of information we want to parse the exact data we wa
 #### Incorporating VirusTotal
 
 Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-up to VirusTotal and copy the API key for our account. Now let's set it up to look up the hash on our Mimikatz file:
-1. In Shuffle search Virustotal in the "Active Apps", then drag and drop it on the canvas.
+1. In Shuffle search "Virustotal" in the "Active Apps", then drag and drop it on the canvas.
 2. Click on the VirusTotal icon then Authenticate and add in your API key.
 3. In "Find Actions" choose "Get a hash report".
 4. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
 5. Save and run it
 
+<img src="https://i.imgur.com/bapWcRC.png" height="80%" width="80%"/>
+<br/>
 
+<h2> </h2> 
+
+### Creating Alerts
+Log-in TheHive with the default credentials(provided in the Installation Instruction file), then create a new orginasation and create 2 accounts within it, a service account and a normal account. 
+<br>
+For the service account create an API Key and copy it. Next, log-in using the normal account you just created, and head back to Shuffle set up Thehive:
+1. Search "TheHive" in the "Active Apps", then drag and drop it on the canvas.
+2. Click on the TheHive icon then Authenticate and add in your API key, for the url add in your TheHive public IP address along with the port number.
+3. In "Find Actions" choose "Create Alert", then scroll down until you find the "Date" field and choose Execution Argument > utcTime
+4. Add in the describtion you want to assist the Analyst with investigating the alert.
+5. Set Flag to "false", Pap to 2, Severity to 2, Source to "Wazuh" and Status to "New".
+6. In the Tags field you can add in the Mitre Attack Tag in brackets. In this case ["T10003"] stands for credentials dumping, which is what Mimikatz is known for.
+
+<img src="https://i.imgur.com/6O2EQvp.png" height="80%" width="80%"/>
+<br/>
 
 </p>
 <!--
@@ -197,3 +216,4 @@ Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-
 @@ text in purple (and bold)@@
 ```
 --!>
+1
