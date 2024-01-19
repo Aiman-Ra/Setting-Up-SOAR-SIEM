@@ -169,7 +169,7 @@ Next, click on "Triggers" in the bottom left and grab and drop the "Webhook" ont
 <img src="https://i.imgur.com/jEi0zXO.png" height="80%" width="80%"/>
 <br/>
 
-Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in the "Webhook URI" between the < global> and < alert> tags(Make sure to follow the same indentation). 
+Head back to the Wazuh Manager's CLI and open the ossec.conf file then paste in the "Webhook URI" between the `<global>` and `<alert>` tags (Make sure to follow the same indentation). 
 ```
 sudo nano /var/ossec/etc/ossec.conf
 ```
