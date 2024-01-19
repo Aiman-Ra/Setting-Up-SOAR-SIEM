@@ -127,10 +127,13 @@ Head back to the Wazuh dahsboard, and click on the top left menu button > Stack 
 
 ### Creating Rules
 
-It's time to create our first rule! In this example we want to detect Mimikatz usage in our network. In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules file. Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it. Copy any of the rules so you can use it as a template for your first custom rule.
+It's time to create our first rule! In this example we want to detect Mimikatz usage in our network.
+<br>
+In the Wazuh dashboard click on "wazuh." > Management > Rules > Manage rules file. 
+<br> 
+Search "sysmon" and you can find "0800-sysmon_id_1.xml", click on the eye icon to the right of it to view it and copy any of the rules so you can use it as a template for your first custom rule.
 
-
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%"/>
+<img src="https://i.imgur.com/Sw536g2.png" height="80%" width="80%"/>
 </p>
 
 <!--
