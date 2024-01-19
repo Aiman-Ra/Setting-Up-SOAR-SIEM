@@ -180,8 +180,10 @@ Since we're collecting lots of information we want to parse the exact data we wa
 
 Shuffle allows us to use VirusTotal for enrichment. To do so we'll have to sign-up to VirusTotal and copy the API key for our account. Now let's set it up to look up the hash on our Mimikatz file:
 1. In Shuffle search Virustotal in the "Active Apps", then drag and drop it on the canvas.
-2. Click on the VirusTotal icon and in "Find Actions" choose "Get a hash report".
-3. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
+2. Click on the VirusTotal icon then Authenticate and add in your API key.
+3. In "Find Actions" choose "Get a hash report".
+4. In the "Hash" field click the + icon and choose "SHA256_Regex" then "List"
+5. Save and run it
 
 
 
