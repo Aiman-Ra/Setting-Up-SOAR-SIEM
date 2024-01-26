@@ -182,9 +182,9 @@ As always, whenever we change the config file we must restart the service.
 systemctl restart wazuh-manager.service
 ```
 
-#### Parsing Data
+#### Parsing Logs
 
-Since we're collecting lots of information, we want to parse the exact data to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
+Since we're collecting lots of information, we want to parse relevant data to make it easier to understand. In this case we'll parse the hash value so we can feed it into VirusTotal:
 1. Click on "Change_me" to rename it and set the "Find Actions" to "Regex capture group". 
 2. In "input data" click the + icon and choose "hashes".
 3. In the "Regex" field enter "SHA256=([0-9A-Fa-f]{64})", this enables us to parse the SHA256 hash.
