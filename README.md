@@ -83,7 +83,6 @@ Once again, we have to start and enable TheHive:
 systemctl start thehive
 systemctl enable thehive
 ```
-
 <h2> </h2> 
 
 ### Adding The Agent
@@ -99,7 +98,7 @@ Now we can add an agent to start collecting telemetry. In the Wazuh dashboard cl
 <br/>
 > [!TIP]
 > You'll need to run the terminal with admin privileges when adding the agent
-<br>
+
 
 #### Configuring The Agent
 
@@ -126,7 +125,8 @@ sudo nano /etc/filebeat/filebeat.yml
 
 <p align="center">
 <img src="https://i.imgur.com/8JODF9s.png" height="80%" width="80%"/>
-
+<br>
+ 
 Head back to the Wazuh dahsboard, and click on the top left menu button > Stack management > Index pattern > Create index, and name it "wazuh-archives-**" so we can search everything. In the "Time field" choose "timestamp" and finally, Create index pattern.
 
 <p align="center">
